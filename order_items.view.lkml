@@ -73,10 +73,29 @@ view: order_items {
     sql: ${sale_price} ;;
   }
 
-  measure: distinct_sum_sale_price{
+  measure: distinct_sum_sale_price {
     type: sum_distinct
     sql_distinct_key: ${inventory_item_id} ;;
     sql: ${sale_price} ;;
+  }
+
+  measure: sum_returned_sale_price {
+    type: sum
+    filters: {
+      field: returned_date
+      value: "-NULL"
+    }
+    sql: ${sale_price} ;;
+    value_format: "$0.00"
+  }
+
+  measure: returned_this_week {
+    type: count_distinct
+    sql: ${id} ;;
+    filters: {
+      field: returned_week
+      value: "-NULL"
+    }
   }
 
   measure: average_sale_price {
