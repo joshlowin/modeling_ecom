@@ -73,6 +73,6 @@ view: order_items {
 
   measure: average {
     type: average
-    drill_fields: [sale_price]
+    drill_fields: [sale_price, sale_price_category]
   }
 }
