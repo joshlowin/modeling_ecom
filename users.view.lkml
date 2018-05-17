@@ -92,6 +92,7 @@ view: users {
   }
   measure: average {
     type: average
-    drill_fields: [age]
+    drill_fields: [zip, state, gender]
+    sql: ${age} ;;
   }
 }
