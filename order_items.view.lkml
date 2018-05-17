@@ -38,6 +38,24 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  dimension: sale_price_category {
+    case: {
+      when: {
+        sql: ${sale_price} <= 15 ;;
+        label: "Lil-money"
+      }
+      when: {
+        sql: ${sale_price} > 15 AND ${sale_price} <= 50;;
+        label: "mid-money"
+      }
+      when: {
+        sql: ${sale_price} > 50;;
+        label: "big-money"
+      }
+      else: "other-money"
+    }
+  }
+
   measure: count {
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
