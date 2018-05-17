@@ -42,4 +42,9 @@ view: order_items {
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
   }
+
+  measure: max {
+    type: max
+    drill_fields: [sale_price]
+  }
 }
