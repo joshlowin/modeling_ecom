@@ -102,7 +102,12 @@ view: order_items {
     type: number
     sql: (${sale_price} - ${inventory_items.cost})/${inventory_items.cost} ;;
     value_format: "0.00%"
+  }
 
+  measure: absolute_profit {
+    type: number
+    sql: (${sale_price} - ${inventory_items.cost}) ;;
+    value_format: "$0.00"
   }
 
   measure: average_sale_price {
