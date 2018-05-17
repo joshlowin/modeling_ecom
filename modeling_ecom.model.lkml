@@ -104,6 +104,7 @@ explore: user_data {
 }
 
 explore: users {
+  view_label: "The Sheeple's Shearings"
   always_filter: {
     filters: {
       field: state
