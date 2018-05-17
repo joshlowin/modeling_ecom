@@ -98,6 +98,13 @@ view: order_items {
     }
   }
 
+  measure: relative_profit {
+    type: number
+    sql: (${sale_price} - ${products.cost})/${products.cost} ;;
+    value_format: "0.00%"
+
+  }
+
   measure: average_sale_price {
     type: average
     drill_fields: [sale_price, id, inventory_items.id, orders.id]
