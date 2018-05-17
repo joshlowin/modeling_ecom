@@ -7,8 +7,8 @@ include: "*.view"
 include: "*.dashboard"
 
 datagroup: modeling_ecom_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  sql_trigger: SELECT MAX(id) FROM etl_log;;
+  max_cache_age: "4 hour"
 }
 
 persist_with: modeling_ecom_default_datagroup
