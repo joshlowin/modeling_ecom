@@ -73,6 +73,12 @@ view: order_items {
     sql: ${sale_price} ;;
   }
 
+  measure: distinct_sum_sale_price{
+    type: sum_distinct
+    sql_distinct_key: ${inventory_item_id} ;;
+    sql: ${sale_price} ;;
+  }
+
   measure: average_sale_price {
     type: average
     drill_fields: [sale_price, id, inventory_items.id, orders.id]
