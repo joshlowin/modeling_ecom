@@ -77,6 +77,7 @@ view: order_items {
     type: average
     drill_fields: [sale_price, id, inventory_items.id, orders.id]
     sql: ${sale_price} ;;
+    value_format: "usd"
   }
 #this is redundant because it returns strings - use above measure ^^
 #  measure: average_sale_price_category {
