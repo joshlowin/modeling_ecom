@@ -41,6 +41,10 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
+  dimension: cost {
+    type: number
+    sql: ${TABLE}.cost ;;
+  }
 
   measure: count {
     type: count
