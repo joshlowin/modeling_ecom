@@ -47,4 +47,14 @@ view: order_items {
     type: max
     drill_fields: [sale_price]
   }
+
+  measure: min {
+    type: min
+    drill_fields: [sale_price]
+  }
+
+  measure: average {
+    type: average
+    drill_fields: [sale_price]
+  }
 }
