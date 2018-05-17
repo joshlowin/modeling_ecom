@@ -41,6 +41,7 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
+
   dimension: cost {
     type: number
     sql: ${TABLE}.cost ;;
@@ -50,4 +51,20 @@ view: products {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
   }
+
+  measure: max {
+    type: max
+    drill_fields: [retail_price, cost]
+  }
+
+  measure: min {
+    type: min
+    drill_fields: [retail_price, cost]
+  }
+
+  measure: average {
+    type: average
+    drill_fields: [retail_price, cost]
+  }
+
 }
