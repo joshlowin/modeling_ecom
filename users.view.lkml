@@ -30,6 +30,11 @@ view: users {
     sql: ${TABLE}.country ;;
   }
 
+  dimension: is_female {
+    type: yesno
+    sql:  ${gender} = 'f';;
+  }
+
   dimension_group: created {
     type: time
     timeframes: [
