@@ -52,19 +52,39 @@ view: products {
     drill_fields: [id, item_name, inventory_items.count]
   }
 
-  measure: max {
+  measure: max_retail_price {
     type: max
-    drill_fields: [retail_price, cost]
+    drill_fields: [retail_price, brand, id]
+    sql: ${retail_price} ;;
   }
 
-  measure: min {
+  measure: max_cost {
+    type: max
+    drill_fields: [cost, brand, id]
+    sql: ${cost} ;;
+  }
+
+  measure: min_retail_price {
     type: min
-    drill_fields: [retail_price, cost]
+    drill_fields: [retail_price, brand, id]
+    sql: ${retail_price} ;;
   }
 
-  measure: average {
+  measure: min_cost {
+    type: min
+    drill_fields: [cost, brand, id]
+    sql: ${cost} ;;
+  }
+
+  measure: average_retail_price {
     type: average
-    drill_fields: [retail_price, cost]
+    drill_fields: [retail_price, brand, id]
+    sql: ${retail_price} ;;
   }
 
+  measure: average_cost {
+    type: average
+    drill_fields: [cost, brand, id]
+    sql: ${cost} ;;
+  }
 }

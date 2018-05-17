@@ -61,18 +61,27 @@ view: order_items {
     drill_fields: [id, inventory_items.id, orders.id]
   }
 
-  measure: max {
+  measure: max_sale_price {
     type: max
-    drill_fields: [sale_price]
+    drill_fields: [sale_price, id, inventory_items.id, orders.id]
+    sql: ${sale_price} ;;
   }
 
-  measure: min {
+  measure: min_sale_price {
     type: min
-    drill_fields: [sale_price]
+    drill_fields: [sale_price, id, inventory_items.id, orders.id]
+    sql: ${sale_price} ;;
   }
 
-  measure: average {
+  measure: average_sale_price {
     type: average
-    drill_fields: [sale_price, sale_price_category]
+    drill_fields: [sale_price, id, inventory_items.id, orders.id]
+    sql: ${sale_price} ;;
+  }
+
+  measure: average_sale_price_category {
+    type: average
+    drill_fields: [sale_price_category, sale_price, id, inventory_items.id, orders.id]
+    sql: ${sale_price_category} ;;
   }
 }
