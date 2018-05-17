@@ -132,7 +132,7 @@ explore: users {
   }
   join: products {
     type: left_outer
-    sql_on: ${products.id} = ${inventory_items.id} ;;
+    sql_on: ${products.id} = ${inventory_items.product_id} ;;
     relationship: one_to_one
   }
 }
