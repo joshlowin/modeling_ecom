@@ -109,8 +109,8 @@ explore: users {
       value: "California"
     }
     filters: {
-      field: gender
-      value: "m"
+      field: state
+      value: "New York"
     }
   }
   join: orders {
