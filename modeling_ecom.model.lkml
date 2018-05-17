@@ -24,6 +24,7 @@ explore: events {
 explore: inventory_items {
   join: products {
     type: left_outer
+    fields: [products.id, products.cost, products.retail_price, products.brand, products.item_name, products.category]
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
     relationship: many_to_one
   }
