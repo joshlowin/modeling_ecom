@@ -78,10 +78,10 @@ view: order_items {
     drill_fields: [sale_price, id, inventory_items.id, orders.id]
     sql: ${sale_price} ;;
   }
-
-  measure: average_sale_price_category {
-    type: average
-    drill_fields: [sale_price_category, sale_price, id, inventory_items.id, orders.id]
-    sql: ${sale_price_category} ;;
-  }
+#this is redundant because it returns strings - use above measure ^^
+#  measure: average_sale_price_category {
+#    type: average
+#    drill_fields: [sale_price_category, sale_price, id, inventory_items.id, orders.id]
+#    sql: ${sale_price_category} ;;
+#  }
 }
