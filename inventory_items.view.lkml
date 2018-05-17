@@ -8,9 +8,9 @@ view: inventory_items {
   }
 
   dimension: cost {
-    type: number
-    sql: ${TABLE}.cost ;;
-  }
+     type: number
+     sql: ${TABLE}.cost ;;
+   }
 
   dimension_group: created {
     type: time
@@ -49,5 +49,22 @@ view: inventory_items {
   measure: count {
     type: count
     drill_fields: [id, products.item_name, products.id, order_items.count]
+  }
+
+  measure: average_cost {
+    type: average
+    drill_fields: [id, products.item_name, products.id, order_items.count]
+    sql: ${cost} ;;
+  }
+  measure: max_cost {
+    type: max
+    drill_fields: [id, products.item_name, products.id, order_items.count]
+    sql: ${cost} ;;
+  }
+
+  measure: min_cost {
+    type: min
+    drill_fields: [id, products.item_name, products.id, order_items.count]
+    sql: ${cost} ;;
   }
 }

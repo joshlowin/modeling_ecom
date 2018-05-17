@@ -42,11 +42,6 @@ view: products {
     sql: ${TABLE}.sku ;;
   }
 
-  dimension: cost {
-    type: number
-    sql: ${TABLE}.cost ;;
-  }
-
   measure: count {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
@@ -58,22 +53,10 @@ view: products {
     sql: ${retail_price} ;;
   }
 
-  measure: max_cost {
-    type: max
-    drill_fields: [cost, brand, id]
-    sql: ${cost} ;;
-  }
-
   measure: min_retail_price {
     type: min
     drill_fields: [retail_price, brand, id]
     sql: ${retail_price} ;;
-  }
-
-  measure: min_cost {
-    type: min
-    drill_fields: [cost, brand, id]
-    sql: ${cost} ;;
   }
 
   measure: average_retail_price {
@@ -82,9 +65,4 @@ view: products {
     sql: ${retail_price} ;;
   }
 
-  measure: average_cost {
-    type: average
-    drill_fields: [cost, brand, id]
-    sql: ${cost} ;;
-  }
 }

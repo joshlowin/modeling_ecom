@@ -100,7 +100,7 @@ view: order_items {
 
   measure: relative_profit {
     type: number
-    sql: (${sale_price} - ${products.cost})/${products.cost} ;;
+    sql: (${sale_price} - ${inventory_items.cost})/${inventory_items.cost} ;;
     value_format: "0.00%"
 
   }

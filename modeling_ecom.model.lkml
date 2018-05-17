@@ -25,7 +25,7 @@ explore: inventory_items {
   sql_always_where: ${created_date} >= '2014-01-01';;
   join: products {
     type: left_outer
-    fields: [products.id, products.cost, products.retail_price, products.brand, products.item_name, products.category]
+    fields: [products.id, products.retail_price, products.brand, products.item_name, products.category]
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
     relationship: many_to_one
   }
