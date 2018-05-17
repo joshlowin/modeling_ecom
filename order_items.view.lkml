@@ -42,7 +42,7 @@ view: order_items {
     case: {
       when: {
         sql: ${sale_price} <= 15 ;;
-        label: "Lil-money"
+        label: "lil-money"
       }
       when: {
         sql: ${sale_price} > 15 AND ${sale_price} <= 50;;
