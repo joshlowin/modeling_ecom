@@ -6,12 +6,12 @@ include: "*.view"
 # include all the dashboards
 include: "*.dashboard"
 
-datagroup: modeling_ecom_default_datagroup {
-  sql_trigger: SELECT MAX(id) FROM etl_log;;
+datagroup: users_datagroup {
+  sql_trigger: SELECT MAX(id) FROM users;;
   max_cache_age: "4 hour"
 }
 
-persist_with: modeling_ecom_default_datagroup
+persist_with: users_datagroup
 
 explore: events {
   join: users {
@@ -114,6 +114,7 @@ explore: user_data {
 }
 
 explore: users {
+  persist_with: users_datagroup
   view_label: "The Sheeple's Shearings"
   always_filter: {
     filters: {
