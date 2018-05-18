@@ -107,7 +107,7 @@
       show_null_labels: false
       series_types: []
       colors:
-        - 'palette: Mixed Dark'
+        - 'palette: Random'
       series_colors: []
       listen:
         global filter one: users.country
