@@ -73,8 +73,14 @@ view: users {
 
   dimension: full_name_by_last_name {
     type: string
-    sql: ${last_name} || ', ' || ${first_name} ;;
-    label: "lastname, firstname"
+    sql: CONCAT(${last_name}, ', ', ${first_name}) ;;
+    label: "Full Name by Surname"
+  }
+
+  dimension: full_name{
+    type: string
+    sql: CONCAT(${first_name}, ' ', ${last_name}) ;;
+    label: "Full Name by Firstname"
   }
 
   dimension: state {
