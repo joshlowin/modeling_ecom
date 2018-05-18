@@ -65,7 +65,3 @@
       series_colors: []
       listen:
         global filter one: users.country
-      row: 0
-      col: 8
-      width: 16
-      height: 6
