@@ -75,12 +75,14 @@ view: order_items {
 
   measure: distinct_sum_sale_price {
     type: sum_distinct
+    drill_fields: [sale_price, id, inventory_items.id, orders.id]
     sql_distinct_key: ${inventory_item_id} ;;
     sql: ${sale_price} ;;
   }
 
   measure: sum_returned_sale_price {
     type: sum
+    drill_fields: [sale_price, id, inventory_items.id, orders.id]
     filters: {
       field: returned_date
       value: "-NULL"
@@ -92,6 +94,7 @@ view: order_items {
 
   measure: returned_this_week {
     type: count_distinct
+    drill_fields: [sale_price, id, inventory_items.id, orders.id]
     sql: ${id} ;;
     filters: {
       field: returned_week
@@ -101,6 +104,7 @@ view: order_items {
 
   measure: average_relative_profit {
     type: average
+    drill_fields: [sale_price, id, inventory_items.id, orders.id]
     sql: (${sale_price} - ${inventory_items.cost})/${inventory_items.cost} ;;
     value_format: "0.00%"
     description: "the average return on sold items"
@@ -108,6 +112,7 @@ view: order_items {
 
   measure: total_absolute_profit {
     type: sum
+    drill_fields: [sale_price, id, inventory_items.id, orders.id]
     sql: (${sale_price} - ${inventory_items.cost}) ;;
     value_format: "$0.00"
     description: "the total absolute monetary return on sold items"
