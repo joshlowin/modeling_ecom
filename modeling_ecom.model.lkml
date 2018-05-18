@@ -114,7 +114,7 @@ explore: user_data {
 }
 
 explore: users {
-  persist_with: users_datagroup
+  persist_with: users_datagroup #I think is is redundant
   view_label: "The Sheeple's Shearings"
   always_filter: {
     filters: {
