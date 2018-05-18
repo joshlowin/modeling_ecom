@@ -17,6 +17,7 @@ view: users {
     tiers: [20,30,40,50,60,70,80]
     style: integer
     sql:${TABLE}.age;;
+    label: "age tiers by 10s"
   }
 
   dimension: city {
@@ -33,6 +34,7 @@ view: users {
   dimension: is_female {
     type: yesno
     sql:  ${gender} = 'f';;
+    label: "if the user is female or not"
   }
 
   dimension_group: created {
@@ -67,6 +69,12 @@ view: users {
   dimension: last_name {
     type: string
     sql: ${TABLE}.last_name ;;
+  }
+
+  dimension: full_name_by_last_name {
+    type: string
+    sql: ${last_name} || ', ' || ${first_name} ;;
+    label: "lastname, firstname"
   }
 
   dimension: state {
