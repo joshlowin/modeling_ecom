@@ -66,15 +66,15 @@
       listen:
         global filter one: users.country
 
-    - name: Highest Relative Profit by Brand
+    - name: Highest Absolute Profit by Brand
       model: modeling_ecom
       explore: order_items
       type: looker_pie
       fields:
         - products.brand
-        - order_items.average_relative_profit
+        - order_items.total_absolute_profit
       sorts:
-        - order_items.average_relative_profit desc
+        - order_items.total_absolute_profit desc
       limit: 10
       value_labels: legend
       label_type: labPer
