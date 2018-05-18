@@ -98,8 +98,8 @@ view: order_items {
     }
   }
 
-  measure: total_relative_profit {
-    type: sum
+  measure: average_relative_profit {
+    type: average
     sql: (${sale_price} - ${inventory_items.cost})/${inventory_items.cost} ;;
     value_format: "0.00%"
   }
