@@ -87,6 +87,7 @@ view: order_items {
     }
     sql: ${sale_price} ;;
     value_format: "$0.00"
+    description: "total lost value from returned items"
   }
 
   measure: returned_this_week {
@@ -102,12 +103,14 @@ view: order_items {
     type: average
     sql: (${sale_price} - ${inventory_items.cost})/${inventory_items.cost} ;;
     value_format: "0.00%"
+    description: "the average return on sold items"
   }
 
   measure: total_absolute_profit {
     type: sum
     sql: (${sale_price} - ${inventory_items.cost}) ;;
     value_format: "$0.00"
+    description: "the total absolute monetary return on sold items"
   }
 
   measure: average_sale_price {
