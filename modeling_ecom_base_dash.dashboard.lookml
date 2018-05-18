@@ -65,3 +65,49 @@
       series_colors: []
       listen:
         global filter one: users.country
+
+    - name: Highest Relative Profit by Brand
+      model: modeling_ecom
+      explore: order_items
+      type: looker_pie
+      fields:
+        - products.brand
+        - order_items.average_relative_profit
+      sorts:
+        - order_items.average_relative_profit desc
+      limit: 10
+      value_labels: legend
+      label_type: labPer
+      stacking: "
+      show_value_labels: false
+      label_density: 25
+      legend_position: center
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_lables: true
+      show_y_axis_ticks: true
+      y_axis_tick_denisty: default
+      y_axis_tick_denisty_custom: 5
+      show_x_axis_labels: true
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      x_axis_reversed: false
+      y_axis_reversed: false
+      show_null_points: true
+      point_style: circle
+      interpolation: linear
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      ordering: none
+      show_null_labels: false
+      series_types: []
+      colors:
+        - 'palette: Mixed Dark'
+      series_colors: []
+      listen:
+        global filter one: users.country
