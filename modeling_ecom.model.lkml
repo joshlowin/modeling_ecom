@@ -145,6 +145,16 @@ explore: users {
     sql_on: ${products.id} = ${inventory_items.product_id} ;;
     relationship: one_to_one
   }
+  join: user_data {
+    type: left_outer
+    sql_on: ${user_data.id} = ${users.id} ;;
+    relationship: one_to_one
+  }
+  join: users_nn {
+    type: left_outer
+    sql_on: ${users_nn.id} = ${users.id} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: users_nn {}
