@@ -46,7 +46,7 @@ view: products {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
   }
-
+#parameterize the below measures
   measure: max_retail_price {
     type: max
     drill_fields: [retail_price, brand, id]
